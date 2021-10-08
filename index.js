@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 const app = express();
 dotenv.config();
 
-const PORT = 5001;
+const PORT = process.env.PORT; // heroku will automatically 
 
 // const users = [
 //   {
@@ -97,7 +97,7 @@ const PORT = 5001;
 app.use(express.json());
 // express.json() - inbuilt middleware
 // 3 party  , custom middleware 
- 
+ //heroku does not have env file 
 
 // password 
 async function createConnection(){
@@ -121,6 +121,7 @@ async function createConnection(){
         //  console.log(user);
        
   }
+
 
 
 app.get("/",(request,response) => {
