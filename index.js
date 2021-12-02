@@ -1,11 +1,13 @@
 import dotenv from "dotenv";
 import express from 'express';
+import cors from 'cors';
 import {usersRouter} from './routes/users.js';
 import { managerRouter } from './routes/manager.js';
 import {moviesRouter} from './routes/movies.js';
 import {getUsers,createManager,createUsers,deleteUserById,updateUserById,getUserById,getManagers} from './helper.js';
 
 const app = express();
+app.use(cors());
 
 dotenv.config();
 
